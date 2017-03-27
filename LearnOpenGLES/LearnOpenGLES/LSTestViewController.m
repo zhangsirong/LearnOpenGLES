@@ -82,6 +82,12 @@
             case 16:
                 _openGLView = ViewClass(@"LSMoveCameraView");
                 break;
+            case 17:
+                _openGLView = ViewClass(@"LSColorSceneView");
+                break;
+            case 18:
+                _openGLView = ViewClass(@"LSBaseLightingView");
+                break;
             default:
                 _openGLView = ViewClass(@"UIView");
         }

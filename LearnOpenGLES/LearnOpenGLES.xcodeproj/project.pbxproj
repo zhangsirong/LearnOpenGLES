@@ -59,6 +59,14 @@
 		1FE4D0F61E880AFC0076770A /* LSMoveCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D0F51E880AFC0076770A /* LSMoveCameraView.m */; };
 		1FE4D0F91E880B4E0076770A /* MoveCamera.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D0F71E880B4E0076770A /* MoveCamera.fsh */; };
 		1FE4D0FA1E880B4E0076770A /* MoveCamera.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D0F81E880B4E0076770A /* MoveCamera.vsh */; };
+		1FEAC07E1E896163000FEF59 /* LSColorSceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEAC07D1E896163000FEF59 /* LSColorSceneView.m */; };
+		1FEAC0811E896261000FEF59 /* ColorScene.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC07F1E896261000FEF59 /* ColorScene.fsh */; };
+		1FEAC0821E896261000FEF59 /* ColorScene.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC0801E896261000FEF59 /* ColorScene.vsh */; };
+		1FEAC0871E896699000FEF59 /* lamp.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC0851E896699000FEF59 /* lamp.fsh */; };
+		1FEAC0881E896699000FEF59 /* lamp.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC0861E896699000FEF59 /* lamp.vsh */; };
+		1FEAC08C1E896E92000FEF59 /* LSBaseLightingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEAC08B1E896E92000FEF59 /* LSBaseLightingView.m */; };
+		1FEAC08F1E89708D000FEF59 /* BaseLighting.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC08D1E89708D000FEF59 /* BaseLighting.fsh */; };
+		1FEAC0901E89708D000FEF59 /* BaseLighting.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FEAC08E1E89708D000FEF59 /* BaseLighting.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +146,16 @@
 		1FE4D0F51E880AFC0076770A /* LSMoveCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMoveCameraView.m; sourceTree = "<group>"; };
 		1FE4D0F71E880B4E0076770A /* MoveCamera.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MoveCamera.fsh; sourceTree = "<group>"; };
 		1FE4D0F81E880B4E0076770A /* MoveCamera.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MoveCamera.vsh; sourceTree = "<group>"; };
+		1FEAC07C1E896163000FEF59 /* LSColorSceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSColorSceneView.h; sourceTree = "<group>"; };
+		1FEAC07D1E896163000FEF59 /* LSColorSceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSColorSceneView.m; sourceTree = "<group>"; };
+		1FEAC07F1E896261000FEF59 /* ColorScene.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorScene.fsh; sourceTree = "<group>"; };
+		1FEAC0801E896261000FEF59 /* ColorScene.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorScene.vsh; sourceTree = "<group>"; };
+		1FEAC0851E896699000FEF59 /* lamp.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.fsh; sourceTree = "<group>"; };
+		1FEAC0861E896699000FEF59 /* lamp.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp.vsh; sourceTree = "<group>"; };
+		1FEAC08A1E896E92000FEF59 /* LSBaseLightingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSBaseLightingView.h; sourceTree = "<group>"; };
+		1FEAC08B1E896E92000FEF59 /* LSBaseLightingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSBaseLightingView.m; sourceTree = "<group>"; };
+		1FEAC08D1E89708D000FEF59 /* BaseLighting.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BaseLighting.fsh; sourceTree = "<group>"; };
+		1FEAC08E1E89708D000FEF59 /* BaseLighting.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BaseLighting.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +230,8 @@
 				1FE4D0E31E87F00D0076770A /* More3DCube */,
 				1FE4D0EB1E87FC9B0076770A /* 3DCubeCamera */,
 				1FE4D0F31E880AE30076770A /* MoveCamera */,
+				1FEAC07B1E896137000FEF59 /* ColorScene */,
+				1FEAC0891E896E6B000FEF59 /* BaseLighting */,
 			);
 			path = LearnOpenGLES;
 			sourceTree = "<group>";
@@ -393,6 +413,30 @@
 			path = MoveCamera;
 			sourceTree = "<group>";
 		};
+		1FEAC07B1E896137000FEF59 /* ColorScene */ = {
+			isa = PBXGroup;
+			children = (
+				1FEAC07C1E896163000FEF59 /* LSColorSceneView.h */,
+				1FEAC07D1E896163000FEF59 /* LSColorSceneView.m */,
+				1FEAC07F1E896261000FEF59 /* ColorScene.fsh */,
+				1FEAC0801E896261000FEF59 /* ColorScene.vsh */,
+				1FEAC0851E896699000FEF59 /* lamp.fsh */,
+				1FEAC0861E896699000FEF59 /* lamp.vsh */,
+			);
+			path = ColorScene;
+			sourceTree = "<group>";
+		};
+		1FEAC0891E896E6B000FEF59 /* BaseLighting */ = {
+			isa = PBXGroup;
+			children = (
+				1FEAC08A1E896E92000FEF59 /* LSBaseLightingView.h */,
+				1FEAC08B1E896E92000FEF59 /* LSBaseLightingView.m */,
+				1FEAC08E1E89708D000FEF59 /* BaseLighting.vsh */,
+				1FEAC08D1E89708D000FEF59 /* BaseLighting.fsh */,
+			);
+			path = BaseLighting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,23 +496,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEAC08F1E89708D000FEF59 /* BaseLighting.fsh in Resources */,
 				1FE4D0D71E87CA3E0076770A /* 3DCoordinate.fsh in Resources */,
+				1FEAC0871E896699000FEF59 /* lamp.fsh in Resources */,
 				1F1B9AE11E870FFB00D51365 /* BlendTexture.vsh in Resources */,
 				1FCCE2B81E86CD3200DE68ED /* AnimationTriangle.fsh in Resources */,
 				1F1B9AD71E87058300D51365 /* SampleTexture.vsh in Resources */,
 				1F0F1E111E86591600C101F3 /* LaunchScreen.storyboard in Resources */,
 				1FE4D0C21E87B05B0076770A /* FlexableMixTexture.vsh in Resources */,
+				1FEAC0811E896261000FEF59 /* ColorScene.fsh in Resources */,
 				1FE4D0F91E880B4E0076770A /* MoveCamera.fsh in Resources */,
 				1FCCE2AE1E86C1C500DE68ED /* Triangle2.fsh in Resources */,
 				1FE4D0C11E87B05B0076770A /* FlexableMixTexture.fsh in Resources */,
 				1FE4D0DF1E87E24D0076770A /* 3DCube.fsh in Resources */,
+				1FEAC0881E896699000FEF59 /* lamp.vsh in Resources */,
 				1F0F1E2F1E867A5700C101F3 /* Triangle.fsh in Resources */,
+				1FEAC0821E896261000FEF59 /* ColorScene.vsh in Resources */,
 				1F0F1E2D1E867A3D00C101F3 /* Triangle.vsh in Resources */,
 				1FE4D0D81E87CA3E0076770A /* 3DCoordinate.vsh in Resources */,
 				1F1B9AC31E87030400D51365 /* container.jpg in Resources */,
 				1FCCE2B91E86CD3200DE68ED /* AnimationTriangle.vsh in Resources */,
 				1FE4D0E01E87E24D0076770A /* 3DCube.vsh in Resources */,
 				1F0F1E0E1E86591600C101F3 /* Assets.xcassets in Resources */,
+				1FEAC0901E89708D000FEF59 /* BaseLighting.vsh in Resources */,
 				1FE4D0CA1E87B78B0076770A /* SampleTransformation.fsh in Resources */,
 				1FE4D0EA1E87F1D30076770A /* More3DCube.vsh in Resources */,
 				1F1B9AD61E87058300D51365 /* SampleTexture.fsh in Resources */,
@@ -492,9 +542,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE4D0EE1E87FCB40076770A /* LS3DCubeCameraView.m in Sources */,
+				1FEAC08C1E896E92000FEF59 /* LSBaseLightingView.m in Sources */,
 				1F0F1E091E86591600C101F3 /* RootViewController.m in Sources */,
 				1FE4D0C31E87B05B0076770A /* LSFlexableMixTextureView.m in Sources */,
 				1FE4D0F61E880AFC0076770A /* LSMoveCameraView.m in Sources */,
+				1FEAC07E1E896163000FEF59 /* LSColorSceneView.m in Sources */,
 				1F1B9AE21E870FFB00D51365 /* LSBlendTextureView.m in Sources */,
 				1F0F1E2C1E867A3D00C101F3 /* LSTriangleView.m in Sources */,
 				1FCCE2B11E86C20300DE68ED /* LSTwoTriangleView.m in Sources */,

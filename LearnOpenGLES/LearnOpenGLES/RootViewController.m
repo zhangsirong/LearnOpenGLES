@@ -47,6 +47,9 @@
                     @"更多的立方体",
                     @"旋转的场景摄像机",
                     @"手势移动场景摄像机",
+                    @"创建一个光照场景",
+                    @"基础光照",
+
                     ];
     }
     return _titles;
@@ -87,6 +90,7 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
     }
     return _tableView;
 }
