@@ -162,14 +162,19 @@
     //https://learnopengl-cn.github.io/02%20Lighting/02%20Basic%20Lighting/
     
     GLKVector3 lightPos = GLKVector3Make(1.2, 1.0, 2.0);
+    lightPos.x = 1.0f + sin(displayLink.timestamp) * 2.0f;
+    lightPos.y = sin(displayLink.timestamp / 2.0f) * 1.0f;
 
     GLint objectColorLoc = glGetUniformLocation(_shaderProgram, "objectColor");
     GLint lightColorLoc  = glGetUniformLocation(_shaderProgram, "lightColor");
     GLint lightPosLoc    = glGetUniformLocation(_shaderProgram, "lightPos");
+    GLint viewPosLoc     = glGetUniformLocation(_shaderProgram, "viewPos");
+
     glUniform3f(objectColorLoc, 1.0f, 0.5f, 0.31f);
-    glUniform3f(lightColorLoc,  1.0f, 0.5f, 1.0f);
+    glUniform3f(lightColorLoc,  1.0f, 1.0f, 1.0f);
     glUniform3f(lightPosLoc,    lightPos.x, lightPos.y, lightPos.z);
-    
+    glUniform3f(viewPosLoc,     0.0, 0.0, 3.0);
+
     //利用GLKMath做矩阵矩阵变化
     GLKMatrix4 model = GLKMatrix4Identity;//模型矩阵
     GLKMatrix4 view = GLKMatrix4Identity;//观察矩阵
@@ -177,11 +182,15 @@
     
     model = GLKMatrix4Rotate(model, M_PI_4, 1.0, 1.0, 0.0);
     
-    GLfloat radius = 10.0f;
-    GLfloat camX = sin(displayLink.timestamp) * radius;
-    GLfloat camZ = cos(displayLink.timestamp) * radius;
+//    GLfloat radius = 10.0f;
+//    GLfloat camX = sin(displayLink.timestamp) * radius;
+//    GLfloat camZ = cos(displayLink.timestamp) * radius;
     
-    view = GLKMatrix4MakeLookAt(camX, 0.0f, camZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+//    view = GLKMatrix4MakeLookAt(camX, 0.0f, camZ, 0.0, 0.0, camZ - 1.0, 0.0, 1.0, 0.0);
+    
+    
+    view = GLKMatrix4MakeLookAt(0.0f, 0.0f, 6.0f, 0.0, 0.0, 2.0, 0.0, 1.0, 0.0);
+
     projection = GLKMatrix4MakePerspective(M_PI_4,self.bounds.size.width / self.bounds.size.width, 0.1, 100.0);
     
     GLint modelLocation = glGetUniformLocation(_shaderProgram, [@"model" UTF8String]);
