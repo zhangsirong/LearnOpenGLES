@@ -88,6 +88,11 @@
             case 18:
                 _openGLView = ViewClass(@"LSBaseLightingView");
                 break;
+            case 19:
+                _openGLView = ViewClass(@"LSMaterialView");
+                break;
+                
+                
             default:
                 _openGLView = ViewClass(@"UIView");
         }
