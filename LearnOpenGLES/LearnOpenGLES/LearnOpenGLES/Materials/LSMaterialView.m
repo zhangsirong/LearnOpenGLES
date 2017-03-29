@@ -187,6 +187,16 @@
     glUniform3f(glGetUniformLocation(_shaderProgram, "material.specular"),  0.5f, 0.5f, 0.5f);
     glUniform1f(glGetUniformLocation(_shaderProgram, "material.shininess"), 32.0f);
     
+    // 设置白光
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "light.ambient"),  1.0f, 1.0f, 1.0f);
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "light.diffuse"),  1.0f, 1.0f, 1.0f);
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "light.specular"), 1.0f, 1.0f, 1.0f);
+    // 设置物体材质
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "material.ambient"),   0.0f, 0.1f, 0.06f);
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "material.diffuse"),   0.0f, 0.50980392f, 0.50980392f);
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "material.specular"),  0.50196078f, 0.50196078f, 0.50196078f);
+//    glUniform1f(glGetUniformLocation(_shaderProgram, "material.shininess"), 32.0f);
+    
     //利用GLKMath做矩阵矩阵变化
     GLKMatrix4 model = GLKMatrix4Identity;//模型矩阵
     GLKMatrix4 view = GLKMatrix4Identity;//观察矩阵
