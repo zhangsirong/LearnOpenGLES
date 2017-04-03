@@ -26,23 +26,23 @@ uniform Light light;
 
 void main(void) {
     
-    // Ambient
+    // Ambient 环境分量
     vec3 ambient = light.ambient * vec3(texture2D(material.diffuse, TexCoords));
 
-    // Diffuse
+    // Diffuse 漫反射分量
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(light.position - FragPos);
     float diff = max(dot(norm, lightDir), 0.0);
     vec3 diffuse = light.diffuse * diff * vec3(texture2D(material.diffuse, TexCoords));
 
     //https://learnopengl-cn.github.io/02%20Lighting/04%20Lighting%20maps/
-    // Specular
+    // Specular 镜面分量
     vec3 viewDir = normalize(viewPos - FragPos);
     vec3 reflectDir = reflect(-lightDir, norm);
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
     vec3 specular = light.specular * spec * vec3(texture2D(material.specular, TexCoords));
     
-    // Emission
+    // Emission。放射光分量
     vec3 emission = vec3(texture2D(material.emission, TexCoords));
     
     vec3 result = ambient + diffuse + specular + emission;

@@ -33,6 +33,7 @@
     
     return programHandle;
 }
+
 + (GLuint)compileShader:(NSString *)shaderName withType:(GLenum)shaderType
 {
     NSString* type;
@@ -49,10 +50,10 @@
     }
     
     const char * shaderStringUTF8 = [shaderString UTF8String];
-    int shaderStringLength = (int)[shaderString length];
+//    int shaderStringLength = (int)[shaderString length];
     
     GLuint shaderHandle = glCreateShader(shaderType);
-    glShaderSource(shaderHandle, 1, &shaderStringUTF8, &shaderStringLength);
+    glShaderSource(shaderHandle, 1, &shaderStringUTF8, NULL);//传NULL 为了GLSL添加中文注释
     glCompileShader(shaderHandle);
     GLint compileSuccess;
     glGetShaderiv(shaderHandle, GL_COMPILE_STATUS, &compileSuccess);
