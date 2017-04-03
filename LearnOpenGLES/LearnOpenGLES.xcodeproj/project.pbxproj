@@ -28,6 +28,11 @@
 		1F1B9AE01E870FFB00D51365 /* BlendTexture.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9ADC1E870FFB00D51365 /* BlendTexture.fsh */; };
 		1F1B9AE11E870FFB00D51365 /* BlendTexture.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9ADD1E870FFB00D51365 /* BlendTexture.vsh */; };
 		1F1B9AE21E870FFB00D51365 /* LSBlendTextureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B9ADF1E870FFB00D51365 /* LSBlendTextureView.m */; };
+		1F460F861E8D60DF00E9739A /* LSLightingMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F460F851E8D60DF00E9739A /* LSLightingMapView.m */; };
+		1F460F881E8D610400E9739A /* container2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F871E8D610400E9739A /* container2.png */; };
+		1F460F8A1E8D610A00E9739A /* container2_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F891E8D610A00E9739A /* container2_specular.png */; };
+		1F460F8D1E8D618A00E9739A /* LightingMap.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F8B1E8D618A00E9739A /* LightingMap.fsh */; };
+		1F460F8E1E8D618A00E9739A /* LightingMap.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F8C1E8D618A00E9739A /* LightingMap.vsh */; };
 		1F4F21731E8C17C7000A0733 /* LSMaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F21721E8C17C7000A0733 /* LSMaterialView.m */; };
 		1F4F21761E8C1904000A0733 /* Material.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F21741E8C1904000A0733 /* Material.fsh */; };
 		1F4F21771E8C1904000A0733 /* Material.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F21751E8C1904000A0733 /* Material.vsh */; };
@@ -104,6 +109,12 @@
 		1F1B9ADD1E870FFB00D51365 /* BlendTexture.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlendTexture.vsh; sourceTree = "<group>"; };
 		1F1B9ADE1E870FFB00D51365 /* LSBlendTextureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSBlendTextureView.h; sourceTree = "<group>"; };
 		1F1B9ADF1E870FFB00D51365 /* LSBlendTextureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSBlendTextureView.m; sourceTree = "<group>"; };
+		1F460F841E8D60DF00E9739A /* LSLightingMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLightingMapView.h; sourceTree = "<group>"; };
+		1F460F851E8D60DF00E9739A /* LSLightingMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLightingMapView.m; sourceTree = "<group>"; };
+		1F460F871E8D610400E9739A /* container2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = container2.png; sourceTree = "<group>"; };
+		1F460F891E8D610A00E9739A /* container2_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = container2_specular.png; sourceTree = "<group>"; };
+		1F460F8B1E8D618A00E9739A /* LightingMap.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightingMap.fsh; sourceTree = "<group>"; };
+		1F460F8C1E8D618A00E9739A /* LightingMap.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightingMap.vsh; sourceTree = "<group>"; };
 		1F4F21711E8C17C7000A0733 /* LSMaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMaterialView.h; sourceTree = "<group>"; };
 		1F4F21721E8C17C7000A0733 /* LSMaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMaterialView.m; sourceTree = "<group>"; };
 		1F4F21741E8C1904000A0733 /* Material.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Material.fsh; sourceTree = "<group>"; };
@@ -240,6 +251,7 @@
 				1FEAC07B1E896137000FEF59 /* ColorScene */,
 				1FEAC0891E896E6B000FEF59 /* BaseLighting */,
 				1F4F21701E8C17AF000A0733 /* Materials */,
+				1F460F831E8D60A500E9739A /* LightingMaps */,
 			);
 			path = LearnOpenGLES;
 			sourceTree = "<group>";
@@ -285,6 +297,8 @@
 		1F1B9AB01E87029F00D51365 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1F460F891E8D610A00E9739A /* container2_specular.png */,
+				1F460F871E8D610400E9739A /* container2.png */,
 				1F1B9AB21E87030400D51365 /* awesomeface.png */,
 				1F1B9AB31E87030400D51365 /* container.jpg */,
 			);
@@ -315,13 +329,24 @@
 			path = BlendTexture;
 			sourceTree = "<group>";
 		};
+		1F460F831E8D60A500E9739A /* LightingMaps */ = {
+			isa = PBXGroup;
+			children = (
+				1F460F841E8D60DF00E9739A /* LSLightingMapView.h */,
+				1F460F851E8D60DF00E9739A /* LSLightingMapView.m */,
+				1F460F8C1E8D618A00E9739A /* LightingMap.vsh */,
+				1F460F8B1E8D618A00E9739A /* LightingMap.fsh */,
+			);
+			path = LightingMaps;
+			sourceTree = "<group>";
+		};
 		1F4F21701E8C17AF000A0733 /* Materials */ = {
 			isa = PBXGroup;
 			children = (
-				1F4F21741E8C1904000A0733 /* Material.fsh */,
-				1F4F21751E8C1904000A0733 /* Material.vsh */,
 				1F4F21711E8C17C7000A0733 /* LSMaterialView.h */,
 				1F4F21721E8C17C7000A0733 /* LSMaterialView.m */,
+				1F4F21741E8C1904000A0733 /* Material.fsh */,
+				1F4F21751E8C1904000A0733 /* Material.vsh */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -404,8 +429,8 @@
 			children = (
 				1FE4D0E41E87F04D0076770A /* LSMore3DCubeView.h */,
 				1FE4D0E51E87F04D0076770A /* LSMore3DCubeView.m */,
-				1FE4D0E71E87F1D30076770A /* More3DCube.fsh */,
 				1FE4D0E81E87F1D30076770A /* More3DCube.vsh */,
+				1FE4D0E71E87F1D30076770A /* More3DCube.fsh */,
 			);
 			path = More3DCube;
 			sourceTree = "<group>";
@@ -515,6 +540,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F460F881E8D610400E9739A /* container2.png in Resources */,
 				1FEAC08F1E89708D000FEF59 /* BaseLighting.fsh in Resources */,
 				1FE4D0D71E87CA3E0076770A /* 3DCoordinate.fsh in Resources */,
 				1FEAC0871E896699000FEF59 /* lamp.fsh in Resources */,
@@ -532,6 +558,8 @@
 				1FEAC0881E896699000FEF59 /* lamp.vsh in Resources */,
 				1F0F1E2F1E867A5700C101F3 /* Triangle.fsh in Resources */,
 				1FEAC0821E896261000FEF59 /* ColorScene.vsh in Resources */,
+				1F460F8D1E8D618A00E9739A /* LightingMap.fsh in Resources */,
+				1F460F8E1E8D618A00E9739A /* LightingMap.vsh in Resources */,
 				1F0F1E2D1E867A3D00C101F3 /* Triangle.vsh in Resources */,
 				1FE4D0D81E87CA3E0076770A /* 3DCoordinate.vsh in Resources */,
 				1F1B9AC31E87030400D51365 /* container.jpg in Resources */,
@@ -543,6 +571,7 @@
 				1FE4D0CA1E87B78B0076770A /* SampleTransformation.fsh in Resources */,
 				1FE4D0EA1E87F1D30076770A /* More3DCube.vsh in Resources */,
 				1F1B9AD61E87058300D51365 /* SampleTexture.fsh in Resources */,
+				1F460F8A1E8D610A00E9739A /* container2_specular.png in Resources */,
 				1F1B9AAE1E86E6D200D51365 /* GradientTriangle.fsh in Resources */,
 				1FE4D0F11E87FD170076770A /* 3DCubeCamera.fsh in Resources */,
 				1FE4D0CB1E87B78B0076770A /* SampleTransformation.vsh in Resources */,
@@ -588,6 +617,7 @@
 				1FCCE2B51E86CC0100DE68ED /* LSAnimationColorView.m in Sources */,
 				1FE4D0D01E87C0420076770A /* LSBaseDisplayLinkView.m in Sources */,
 				1F0F1E2B1E867A3D00C101F3 /* LSFirstView.m in Sources */,
+				1F460F861E8D60DF00E9739A /* LSLightingMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
