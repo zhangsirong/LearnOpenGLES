@@ -24,6 +24,9 @@
 		1F1736311E92C27C00E65D23 /* LSDirectionalLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1736301E92C27C00E65D23 /* LSDirectionalLightView.m */; };
 		1F1736341E92C2BA00E65D23 /* DirectionalLight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1736321E92C2BA00E65D23 /* DirectionalLight.fsh */; };
 		1F1736351E92C2BA00E65D23 /* DirectionalLight.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1736331E92C2BA00E65D23 /* DirectionalLight.vsh */; };
+		1F1736391E92D1F100E65D23 /* LSPointLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1736381E92D1F100E65D23 /* LSPointLightView.m */; };
+		1F17363C1E92D24700E65D23 /* PointLight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F17363A1E92D24700E65D23 /* PointLight.fsh */; };
+		1F17363D1E92D24700E65D23 /* PointLight.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F17363B1E92D24700E65D23 /* PointLight.vsh */; };
 		1F1B9AAB1E86E64500D51365 /* LSGradientTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAA1E86E64500D51365 /* LSGradientTriangleView.m */; };
 		1F1B9AAE1E86E6D200D51365 /* GradientTriangle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAC1E86E6D200D51365 /* GradientTriangle.fsh */; };
 		1F1B9AAF1E86E6D200D51365 /* GradientTriangle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAD1E86E6D200D51365 /* GradientTriangle.vsh */; };
@@ -112,6 +115,10 @@
 		1F1736301E92C27C00E65D23 /* LSDirectionalLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDirectionalLightView.m; sourceTree = "<group>"; };
 		1F1736321E92C2BA00E65D23 /* DirectionalLight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = DirectionalLight.fsh; sourceTree = "<group>"; };
 		1F1736331E92C2BA00E65D23 /* DirectionalLight.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = DirectionalLight.vsh; sourceTree = "<group>"; };
+		1F1736371E92D1F100E65D23 /* LSPointLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPointLightView.h; sourceTree = "<group>"; };
+		1F1736381E92D1F100E65D23 /* LSPointLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPointLightView.m; sourceTree = "<group>"; };
+		1F17363A1E92D24700E65D23 /* PointLight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PointLight.fsh; sourceTree = "<group>"; };
+		1F17363B1E92D24700E65D23 /* PointLight.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PointLight.vsh; sourceTree = "<group>"; };
 		1F1B9AA91E86E64500D51365 /* LSGradientTriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSGradientTriangleView.h; sourceTree = "<group>"; };
 		1F1B9AAA1E86E64500D51365 /* LSGradientTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSGradientTriangleView.m; sourceTree = "<group>"; };
 		1F1B9AAC1E86E6D200D51365 /* GradientTriangle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GradientTriangle.fsh; sourceTree = "<group>"; };
@@ -272,6 +279,7 @@
 				1F460F831E8D60A500E9739A /* LightingMaps */,
 				1F1736261E92B68A00E65D23 /* LightingText */,
 				1F17362E1E92C24D00E65D23 /* DirectionalLight */,
+				1F1736361E92D1DD00E65D23 /* PointLight */,
 			);
 			path = LearnOpenGLES;
 			sourceTree = "<group>";
@@ -323,6 +331,17 @@
 				1F1736331E92C2BA00E65D23 /* DirectionalLight.vsh */,
 			);
 			path = DirectionalLight;
+			sourceTree = "<group>";
+		};
+		1F1736361E92D1DD00E65D23 /* PointLight */ = {
+			isa = PBXGroup;
+			children = (
+				1F1736371E92D1F100E65D23 /* LSPointLightView.h */,
+				1F1736381E92D1F100E65D23 /* LSPointLightView.m */,
+				1F17363A1E92D24700E65D23 /* PointLight.fsh */,
+				1F17363B1E92D24700E65D23 /* PointLight.vsh */,
+			);
+			path = PointLight;
 			sourceTree = "<group>";
 		};
 		1F1B9AA21E86E5CD00D51365 /* GradientTriangle */ = {
@@ -618,6 +637,7 @@
 				1FE4D0EA1E87F1D30076770A /* More3DCube.vsh in Resources */,
 				1F1B9AD61E87058300D51365 /* SampleTexture.fsh in Resources */,
 				1F460F8A1E8D610A00E9739A /* container2_specular.png in Resources */,
+				1F17363D1E92D24700E65D23 /* PointLight.vsh in Resources */,
 				1F1B9AAE1E86E6D200D51365 /* GradientTriangle.fsh in Resources */,
 				1F17362C1E92B70500E65D23 /* LightingText.fsh in Resources */,
 				1FE4D0F11E87FD170076770A /* 3DCubeCamera.fsh in Resources */,
@@ -631,6 +651,7 @@
 				1FE4D0FA1E880B4E0076770A /* MoveCamera.vsh in Resources */,
 				1F1B9AE01E870FFB00D51365 /* BlendTexture.fsh in Resources */,
 				1F1736341E92C2BA00E65D23 /* DirectionalLight.fsh in Resources */,
+				1F17363C1E92D24700E65D23 /* PointLight.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +665,7 @@
 				1FE4D0EE1E87FCB40076770A /* LS3DCubeCameraView.m in Sources */,
 				1FEAC08C1E896E92000FEF59 /* LSBaseLightingView.m in Sources */,
 				1F0F1E091E86591600C101F3 /* RootViewController.m in Sources */,
+				1F1736391E92D1F100E65D23 /* LSPointLightView.m in Sources */,
 				1FE4D0C31E87B05B0076770A /* LSFlexableMixTextureView.m in Sources */,
 				1FE4D0F61E880AFC0076770A /* LSMoveCameraView.m in Sources */,
 				1FEAC07E1E896163000FEF59 /* LSColorSceneView.m in Sources */,

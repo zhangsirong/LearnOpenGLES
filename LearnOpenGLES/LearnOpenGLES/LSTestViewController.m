@@ -100,6 +100,9 @@
             case 22:
                 _openGLView = ViewClass(@"LSDirectionalLightView");
                 break;
+            case 23:
+                _openGLView = ViewClass(@"LSPointLightView");
+                break;
             default:
                 _openGLView = ViewClass(@"UIView");
         }

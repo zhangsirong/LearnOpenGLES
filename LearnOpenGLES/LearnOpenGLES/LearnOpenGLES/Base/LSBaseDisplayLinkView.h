@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GLKit/GLKMath.h>
+
+extern const GLKVector3 cubePositions[];
 
 /**
  *需要定时器的继承这个类

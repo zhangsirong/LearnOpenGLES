@@ -13,21 +13,6 @@
 #import "LSShaderTool.h"
 #import <GLKit/GLKMath.h>
 
-
-const GLKVector3 cubePositions2[] = {
-    { 0.0f,  0.0f,  0.0  },
-    { 2.0f,  5.0f, -15.0 },
-    {-1.5f, -2.2f, -2.5  },
-    {-3.8f, -2.0f, -12.3 },
-    { 2.4f, -0.4f, -3.5  },
-    {-1.7f,  3.0f, -7.5  },
-    { 1.3f, -2.0f, -2.5  },
-    { 1.5f,  2.0f, -2.5  },
-    { 1.5f,  0.2f, -1.5  },
-    {-1.3f,  1.0f, -1.5f }
-};
-
-
 @interface LSMoveCameraView ()
 {
     CAEAGLLayer *_eaglLayer;
@@ -258,7 +243,7 @@ const GLKVector3 cubePositions2[] = {
     
     //画10个立方体
     for (GLuint i = 0; i < 10; i++) {
-        GLKVector3 vector = cubePositions2[i];
+        GLKVector3 vector = cubePositions[i];
         GLKMatrix4 model = GLKMatrix4Identity;//模型矩阵
         model = GLKMatrix4Translate(model, vector.x,vector.y,vector.z);
         

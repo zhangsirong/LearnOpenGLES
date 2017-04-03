@@ -1,19 +1,19 @@
 //
-//  LSDirectionalLightView.m
+//  LSPointLightView.m
 //  LearnOpenGLES
 //
 //  Created by zsr on 2017/4/4.
 //  Copyright © 2017年 Lpzsrong Inc. All rights reserved.
 //
 
-#import "LSDirectionalLightView.h"
+#import "LSPointLightView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/ES3/gl.h>
 #import <OpenGLES/ES3/glext.h>
 #import "LSShaderTool.h"
 #import <GLKit/GLKMath.h>
 
-@interface LSDirectionalLightView ()
+@interface LSPointLightView ()
 {
     CAEAGLLayer *_eaglLayer;
     EAGLContext *_context;
@@ -42,7 +42,7 @@
 
 @end
 
-@implementation LSDirectionalLightView
+@implementation LSPointLightView
 
 + (Class)layerClass
 {
@@ -130,7 +130,7 @@
         };
         
         //着色器程序
-        _shaderProgram = [LSShaderTool getShaderWithVertexShaderFile:@"DirectionalLight" fragmentShaderFile:@"DirectionalLight"];
+        _shaderProgram = [LSShaderTool getShaderWithVertexShaderFile:@"PointLight" fragmentShaderFile:@"PointLight"];
         glUseProgram(_shaderProgram);
         
         //灯的着色器程序
@@ -247,26 +247,29 @@
     lightPos.x = sin(displayLink.timestamp) * 2.0f;
     lightPos.y = sin(displayLink.timestamp / 2.0f) * 1.0f;
     
-    GLint lightDirLoc = glGetUniformLocation(_shaderProgram, "light.direction");
+    GLint lightPosLoc = glGetUniformLocation(_shaderProgram, "light.position");
     GLint viewPosLoc  = glGetUniformLocation(_shaderProgram, "viewPos");
-    glUniform3f(lightDirLoc, -0.2f, -1.0f, -0.3f);//设置太阳光方向
+    glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
     glUniform3f(viewPosLoc, 0.0, 0.0, 3.0);
     
     //设置光线
-    glUniform3f(glGetUniformLocation(_shaderProgram, "light.ambient"),  0.2f, 0.2f, 0.2f);
-    glUniform3f(glGetUniformLocation(_shaderProgram, "light.diffuse"),  0.5f, 0.5f, 0.5f);
-    glUniform3f(glGetUniformLocation(_shaderProgram, "light.specular"), 1.0f, 1.0f, 1.0f);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "light.ambient"),   0.2f, 0.2f, 0.2f);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "light.diffuse"),   0.5f, 0.5f, 0.5f);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "light.specular"),  1.0f, 1.0f, 1.0f);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "light.constant"),  1.0f);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "light.linear"),    0.09);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "light.quadratic"), 0.032);
     // 设置材质
     glUniform1f(glGetUniformLocation(_shaderProgram, "material.shininess"), 32.0);
     
     
     //利用GLKMath做矩阵矩阵变化
     GLKMatrix4 model = GLKMatrix4Identity;//模型矩阵
-//    GLKMatrix4 view = GLKMatrix4Identity;//观察矩阵
+    //    GLKMatrix4 view = GLKMatrix4Identity;//观察矩阵
     GLKMatrix4 projection = GLKMatrix4Identity;//投影矩阵
     
     //    model = GLKMatrix4Rotate(model, M_PI_4, 1.0, 1.0, 1.0);
-//    view = GLKMatrix4MakeLookAt(2.0, 2.0, 3.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    //    view = GLKMatrix4MakeLookAt(2.0, 2.0, 3.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     GLKMatrix4 view = GLKMatrix4MakeLookAt(cameraPos.x, cameraPos.y, cameraPos.z, cameraPos.x + cameraFront.x, cameraPos.y + cameraFront.y, cameraPos.z + cameraFront.z, cameraUp.x, cameraUp.y, cameraUp.z);
     projection = GLKMatrix4MakePerspective(M_PI_4,self.bounds.size.width / self.bounds.size.width, 0.1, 100.0);
     
@@ -290,7 +293,28 @@
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
     glBindVertexArray(0);
-
+    
+    
+    //灯的着色器
+    glUseProgram(_lampShaderProgram);
+    
+    modelLocation = glGetUniformLocation(_lampShaderProgram, "model");
+    viewLocation  = glGetUniformLocation(_lampShaderProgram, "view");
+    projectionLocation  = glGetUniformLocation(_lampShaderProgram, "projection");
+    
+    glUniformMatrix4fv(modelLocation, 1, GL_FALSE, model.m);
+    glUniformMatrix4fv(viewLocation, 1, GL_FALSE, view.m);
+    glUniformMatrix4fv(projectionLocation, 1, GL_FALSE, projection.m);
+    
+    model = GLKMatrix4Identity;
+    model = GLKMatrix4TranslateWithVector3(model, lightPos);
+    model = GLKMatrix4Scale(model, 0.2, 0.2, 0.2);
+    
+    glUniformMatrix4fv(modelLocation, 1, GL_FALSE, model.m);
+    glBindVertexArray(_lightVAO);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glBindVertexArray(0);
+    
     
     [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
@@ -350,4 +374,5 @@
         [EAGLContext setCurrentContext:nil];
     }
 }
+
 @end
