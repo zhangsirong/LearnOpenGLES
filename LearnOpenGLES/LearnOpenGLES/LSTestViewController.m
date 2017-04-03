@@ -94,7 +94,9 @@
             case 20:
                 _openGLView = ViewClass(@"LSLightingMapView");
                 break;
-                
+            case 21:
+                _openGLView = ViewClass(@"LSLightingTextView");
+                break;
                 
             default:
                 _openGLView = ViewClass(@"UIView");

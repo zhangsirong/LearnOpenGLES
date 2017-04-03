@@ -17,6 +17,10 @@
 		1F0F1E2C1E867A3D00C101F3 /* LSTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F1E291E867A3D00C101F3 /* LSTriangleView.m */; };
 		1F0F1E2D1E867A3D00C101F3 /* Triangle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F0F1E2A1E867A3D00C101F3 /* Triangle.vsh */; };
 		1F0F1E2F1E867A5700C101F3 /* Triangle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F0F1E2E1E867A5700C101F3 /* Triangle.fsh */; };
+		1F1736251E92B65E00E65D23 /* matrix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1736241E92B65E00E65D23 /* matrix.jpg */; };
+		1F1736291E92B6C000E65D23 /* LSLightingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1736281E92B6C000E65D23 /* LSLightingTextView.m */; };
+		1F17362C1E92B70500E65D23 /* LightingText.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F17362A1E92B70500E65D23 /* LightingText.fsh */; };
+		1F17362D1E92B70500E65D23 /* LightingText.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F17362B1E92B70500E65D23 /* LightingText.vsh */; };
 		1F1B9AAB1E86E64500D51365 /* LSGradientTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAA1E86E64500D51365 /* LSGradientTriangleView.m */; };
 		1F1B9AAE1E86E6D200D51365 /* GradientTriangle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAC1E86E6D200D51365 /* GradientTriangle.fsh */; };
 		1F1B9AAF1E86E6D200D51365 /* GradientTriangle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F1B9AAD1E86E6D200D51365 /* GradientTriangle.vsh */; };
@@ -44,6 +48,7 @@
 		1FCCE2B51E86CC0100DE68ED /* LSAnimationColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCE2B41E86CC0100DE68ED /* LSAnimationColorView.m */; };
 		1FCCE2B81E86CD3200DE68ED /* AnimationTriangle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCE2B61E86CD3200DE68ED /* AnimationTriangle.fsh */; };
 		1FCCE2B91E86CD3200DE68ED /* AnimationTriangle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCE2B71E86CD3200DE68ED /* AnimationTriangle.vsh */; };
+		1FE07E441E92B4C800A04BBA /* lighting_maps_specular_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE07E431E92B4C800A04BBA /* lighting_maps_specular_color.png */; };
 		1FE4D0B41E87AB110076770A /* LSFourFaceTextureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D0B31E87AB110076770A /* LSFourFaceTextureView.m */; };
 		1FE4D0C11E87B05B0076770A /* FlexableMixTexture.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D0BD1E87B05B0076770A /* FlexableMixTexture.fsh */; };
 		1FE4D0C21E87B05B0076770A /* FlexableMixTexture.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D0BE1E87B05B0076770A /* FlexableMixTexture.vsh */; };
@@ -95,6 +100,11 @@
 		1F0F1E291E867A3D00C101F3 /* LSTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTriangleView.m; sourceTree = "<group>"; };
 		1F0F1E2A1E867A3D00C101F3 /* Triangle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Triangle.vsh; sourceTree = "<group>"; };
 		1F0F1E2E1E867A5700C101F3 /* Triangle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Triangle.fsh; sourceTree = "<group>"; };
+		1F1736241E92B65E00E65D23 /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
+		1F1736271E92B6C000E65D23 /* LSLightingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLightingTextView.h; sourceTree = "<group>"; };
+		1F1736281E92B6C000E65D23 /* LSLightingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLightingTextView.m; sourceTree = "<group>"; };
+		1F17362A1E92B70500E65D23 /* LightingText.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightingText.fsh; sourceTree = "<group>"; };
+		1F17362B1E92B70500E65D23 /* LightingText.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightingText.vsh; sourceTree = "<group>"; };
 		1F1B9AA91E86E64500D51365 /* LSGradientTriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSGradientTriangleView.h; sourceTree = "<group>"; };
 		1F1B9AAA1E86E64500D51365 /* LSGradientTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSGradientTriangleView.m; sourceTree = "<group>"; };
 		1F1B9AAC1E86E6D200D51365 /* GradientTriangle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GradientTriangle.fsh; sourceTree = "<group>"; };
@@ -132,6 +142,7 @@
 		1FCCE2B41E86CC0100DE68ED /* LSAnimationColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimationColorView.m; sourceTree = "<group>"; };
 		1FCCE2B61E86CD3200DE68ED /* AnimationTriangle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AnimationTriangle.fsh; sourceTree = "<group>"; };
 		1FCCE2B71E86CD3200DE68ED /* AnimationTriangle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AnimationTriangle.vsh; sourceTree = "<group>"; };
+		1FE07E431E92B4C800A04BBA /* lighting_maps_specular_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lighting_maps_specular_color.png; sourceTree = "<group>"; };
 		1FE4D0B21E87AB110076770A /* LSFourFaceTextureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFourFaceTextureView.h; sourceTree = "<group>"; };
 		1FE4D0B31E87AB110076770A /* LSFourFaceTextureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFourFaceTextureView.m; sourceTree = "<group>"; };
 		1FE4D0BD1E87B05B0076770A /* FlexableMixTexture.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FlexableMixTexture.fsh; sourceTree = "<group>"; };
@@ -252,6 +263,7 @@
 				1FEAC0891E896E6B000FEF59 /* BaseLighting */,
 				1F4F21701E8C17AF000A0733 /* Materials */,
 				1F460F831E8D60A500E9739A /* LightingMaps */,
+				1F1736261E92B68A00E65D23 /* LightingText */,
 			);
 			path = LearnOpenGLES;
 			sourceTree = "<group>";
@@ -283,6 +295,17 @@
 			path = Triangle;
 			sourceTree = "<group>";
 		};
+		1F1736261E92B68A00E65D23 /* LightingText */ = {
+			isa = PBXGroup;
+			children = (
+				1F1736271E92B6C000E65D23 /* LSLightingTextView.h */,
+				1F1736281E92B6C000E65D23 /* LSLightingTextView.m */,
+				1F17362A1E92B70500E65D23 /* LightingText.fsh */,
+				1F17362B1E92B70500E65D23 /* LightingText.vsh */,
+			);
+			path = LightingText;
+			sourceTree = "<group>";
+		};
 		1F1B9AA21E86E5CD00D51365 /* GradientTriangle */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +320,8 @@
 		1F1B9AB01E87029F00D51365 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1F1736241E92B65E00E65D23 /* matrix.jpg */,
+				1FE07E431E92B4C800A04BBA /* lighting_maps_specular_color.png */,
 				1F460F891E8D610A00E9739A /* container2_specular.png */,
 				1F460F871E8D610400E9739A /* container2.png */,
 				1F1B9AB21E87030400D51365 /* awesomeface.png */,
@@ -540,10 +565,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F17362D1E92B70500E65D23 /* LightingText.vsh in Resources */,
 				1F460F881E8D610400E9739A /* container2.png in Resources */,
 				1FEAC08F1E89708D000FEF59 /* BaseLighting.fsh in Resources */,
 				1FE4D0D71E87CA3E0076770A /* 3DCoordinate.fsh in Resources */,
 				1FEAC0871E896699000FEF59 /* lamp.fsh in Resources */,
+				1FE07E441E92B4C800A04BBA /* lighting_maps_specular_color.png in Resources */,
 				1F1B9AE11E870FFB00D51365 /* BlendTexture.vsh in Resources */,
 				1FCCE2B81E86CD3200DE68ED /* AnimationTriangle.fsh in Resources */,
 				1F1B9AD71E87058300D51365 /* SampleTexture.vsh in Resources */,
@@ -573,10 +600,12 @@
 				1F1B9AD61E87058300D51365 /* SampleTexture.fsh in Resources */,
 				1F460F8A1E8D610A00E9739A /* container2_specular.png in Resources */,
 				1F1B9AAE1E86E6D200D51365 /* GradientTriangle.fsh in Resources */,
+				1F17362C1E92B70500E65D23 /* LightingText.fsh in Resources */,
 				1FE4D0F11E87FD170076770A /* 3DCubeCamera.fsh in Resources */,
 				1FE4D0CB1E87B78B0076770A /* SampleTransformation.vsh in Resources */,
 				1FE4D0F21E87FD170076770A /* 3DCubeCamera.vsh in Resources */,
 				1F1B9AC21E87030400D51365 /* awesomeface.png in Resources */,
+				1F1736251E92B65E00E65D23 /* matrix.jpg in Resources */,
 				1F1B9AAF1E86E6D200D51365 /* GradientTriangle.vsh in Resources */,
 				1FE4D0E91E87F1D30076770A /* More3DCube.fsh in Resources */,
 				1FE4D0FA1E880B4E0076770A /* MoveCamera.vsh in Resources */,
@@ -607,6 +636,7 @@
 				1F1B9AD31E87033900D51365 /* LSSampleTextureView.m in Sources */,
 				1F0F1E061E86591600C101F3 /* AppDelegate.m in Sources */,
 				1FE4D0B41E87AB110076770A /* LSFourFaceTextureView.m in Sources */,
+				1F1736291E92B6C000E65D23 /* LSLightingTextView.m in Sources */,
 				1FE4D0C71E87B6CB0076770A /* LSSampleTransformationView.m in Sources */,
 				1F1B9AAB1E86E64500D51365 /* LSGradientTriangleView.m in Sources */,
 				1F0F1E031E86591600C101F3 /* main.m in Sources */,
