@@ -29,6 +29,8 @@
     GLuint _containerVAO;
     
     GLuint _diffuseMap;//漫反射贴图
+    GLuint _specularMap;//镜面贴图
+
 }
 
 @end
@@ -177,11 +179,40 @@
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (GLsizei)width, (GLsizei)height, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
         glBindTexture(GL_TEXTURE_2D, 0);
         free(spriteData);
+
         
-        //激活绑定第一个纹理
+        // 加载纹理第二个纹理
+        CGImageRef spriteImage2 = [UIImage imageNamed:@"container2_specular.png"].CGImage;
+        size_t width2 = CGImageGetWidth(spriteImage2);
+        size_t height2 = CGImageGetHeight(spriteImage2);
+        GLubyte *spriteData2 = (GLubyte *) calloc(width2 * height2 * 4, sizeof(GLubyte));
+        CGContextRef spriteContext2 = CGBitmapContextCreate(spriteData2, width2, height2, 8, width2*4, CGImageGetColorSpace(spriteImage2), kCGImageAlphaPremultipliedLast);
+        CGContextDrawImage(spriteContext2, CGRectMake(0, 0, width2, height2), spriteImage2);
+        CGContextRelease(spriteContext2);
+
+        glGenTextures(1, &_specularMap);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, _specularMap);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,(GLsizei)width, (GLsizei)height, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData2);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glBindTexture(GL_TEXTURE_2D, 0);
+        free(spriteData2);
+        
+        
+        // 激活绑定第一个纹理
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, _diffuseMap);
         glUniform1i(glGetUniformLocation(_shaderProgram, "material.diffuse"), 0);
+        
+        
+        //激活绑定第二个纹理
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, _specularMap);
+        glUniform1i(glGetUniformLocation(_shaderProgram, "material.specular"), 1);
 
     }
     return self;
@@ -193,7 +224,7 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(_shaderProgram);
 
-    GLKVector3 lightPos = GLKVector3Make(1.0, 1.0, 1.0);
+    GLKVector3 lightPos = GLKVector3Make(1.2, 1.0, 2.0);
         lightPos.x = sin(displayLink.timestamp) * 2.0f;
         lightPos.y = sin(displayLink.timestamp / 2.0f) * 1.0f;
     
@@ -207,8 +238,8 @@
     glUniform3f(glGetUniformLocation(_shaderProgram, "light.diffuse"),  0.5f, 0.5f, 0.5f);
     glUniform3f(glGetUniformLocation(_shaderProgram, "light.specular"), 1.0f, 1.0f, 1.0f);
     // 设置材质
-    glUniform3f(glGetUniformLocation(_shaderProgram, "material.specular"),  0.5f, 0.5f, 0.5f);
-    glUniform1f(glGetUniformLocation(_shaderProgram, "material.shininess"), 64.0);
+//    glUniform3f(glGetUniformLocation(_shaderProgram, "material.specular"),  0.5f, 0.5f, 0.5f);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "material.shininess"), 32.0);
     
     
     //利用GLKMath做矩阵矩阵变化
@@ -217,7 +248,7 @@
     GLKMatrix4 projection = GLKMatrix4Identity;//投影矩阵
     
 //    model = GLKMatrix4Rotate(model, M_PI_4, 1.0, 1.0, 1.0);
-    view = GLKMatrix4MakeLookAt(2.0, 1.0, 4.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    view = GLKMatrix4MakeLookAt(-2.0, -2.0, 4.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     projection = GLKMatrix4MakePerspective(M_PI_4,self.bounds.size.width / self.bounds.size.width, 0.1, 100.0);
     
     GLint modelLocation = glGetUniformLocation(_shaderProgram, [@"model" UTF8String]);
