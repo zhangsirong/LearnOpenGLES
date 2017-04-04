@@ -44,6 +44,11 @@
 		1F32F35F1E93EBA200A5B69F /* LSMultiLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F32F35E1E93EBA200A5B69F /* LSMultiLightView.m */; };
 		1F32F3621E93EBF000A5B69F /* MultiLight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F3601E93EBF000A5B69F /* MultiLight.fsh */; };
 		1F32F3631E93EBF000A5B69F /* MultiLight.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F3611E93EBF000A5B69F /* MultiLight.vsh */; };
+		1F32F3671E93FEEB00A5B69F /* LSMultipleLightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F32F3661E93FEEB00A5B69F /* LSMultipleLightView.m */; };
+		1F32F36A1E93FF8100A5B69F /* MultipleLight.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F3681E93FF8100A5B69F /* MultipleLight.fsh */; };
+		1F32F36B1E93FF8100A5B69F /* MultipleLight.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F3691E93FF8100A5B69F /* MultipleLight.vsh */; };
+		1F32F36F1E94044000A5B69F /* lamp1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F36D1E94044000A5B69F /* lamp1.fsh */; };
+		1F32F3701E94044000A5B69F /* lamp1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 1F32F36E1E94044000A5B69F /* lamp1.vsh */; };
 		1F460F861E8D60DF00E9739A /* LSLightingMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F460F851E8D60DF00E9739A /* LSLightingMapView.m */; };
 		1F460F881E8D610400E9739A /* container2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F871E8D610400E9739A /* container2.png */; };
 		1F460F8A1E8D610A00E9739A /* container2_specular.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F460F891E8D610A00E9739A /* container2_specular.png */; };
@@ -147,6 +152,12 @@
 		1F32F35E1E93EBA200A5B69F /* LSMultiLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMultiLightView.m; sourceTree = "<group>"; };
 		1F32F3601E93EBF000A5B69F /* MultiLight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MultiLight.fsh; sourceTree = "<group>"; };
 		1F32F3611E93EBF000A5B69F /* MultiLight.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MultiLight.vsh; sourceTree = "<group>"; };
+		1F32F3651E93FEEB00A5B69F /* LSMultipleLightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMultipleLightView.h; sourceTree = "<group>"; };
+		1F32F3661E93FEEB00A5B69F /* LSMultipleLightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMultipleLightView.m; sourceTree = "<group>"; };
+		1F32F3681E93FF8100A5B69F /* MultipleLight.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MultipleLight.fsh; sourceTree = "<group>"; };
+		1F32F3691E93FF8100A5B69F /* MultipleLight.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MultipleLight.vsh; sourceTree = "<group>"; };
+		1F32F36D1E94044000A5B69F /* lamp1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp1.fsh; sourceTree = "<group>"; };
+		1F32F36E1E94044000A5B69F /* lamp1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lamp1.vsh; sourceTree = "<group>"; };
 		1F460F841E8D60DF00E9739A /* LSLightingMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLightingMapView.h; sourceTree = "<group>"; };
 		1F460F851E8D60DF00E9739A /* LSLightingMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLightingMapView.m; sourceTree = "<group>"; };
 		1F460F871E8D610400E9739A /* container2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = container2.png; sourceTree = "<group>"; };
@@ -296,6 +307,7 @@
 				1F1736361E92D1DD00E65D23 /* PointLight */,
 				1F17363E1E92D79700E65D23 /* FlashLight */,
 				1F32F35C1E93EB8500A5B69F /* MultiLight */,
+				1F32F3641E93FECC00A5B69F /* MultipleLight */,
 			);
 			path = LearnOpenGLES;
 			sourceTree = "<group>";
@@ -428,6 +440,19 @@
 				1F32F3611E93EBF000A5B69F /* MultiLight.vsh */,
 			);
 			path = MultiLight;
+			sourceTree = "<group>";
+		};
+		1F32F3641E93FECC00A5B69F /* MultipleLight */ = {
+			isa = PBXGroup;
+			children = (
+				1F32F3651E93FEEB00A5B69F /* LSMultipleLightView.h */,
+				1F32F3661E93FEEB00A5B69F /* LSMultipleLightView.m */,
+				1F32F3681E93FF8100A5B69F /* MultipleLight.fsh */,
+				1F32F3691E93FF8100A5B69F /* MultipleLight.vsh */,
+				1F32F36D1E94044000A5B69F /* lamp1.fsh */,
+				1F32F36E1E94044000A5B69F /* lamp1.vsh */,
+			);
+			path = MultipleLight;
 			sourceTree = "<group>";
 		};
 		1F460F831E8D60A500E9739A /* LightingMaps */ = {
@@ -651,8 +676,11 @@
 				1F32F3621E93EBF000A5B69F /* MultiLight.fsh in Resources */,
 				1F1736441E92D82B00E65D23 /* FlashLight.fsh in Resources */,
 				1FCCE2B81E86CD3200DE68ED /* AnimationTriangle.fsh in Resources */,
+				1F32F36B1E93FF8100A5B69F /* MultipleLight.vsh in Resources */,
+				1F32F36F1E94044000A5B69F /* lamp1.fsh in Resources */,
 				1F1B9AD71E87058300D51365 /* SampleTexture.vsh in Resources */,
 				1F0F1E111E86591600C101F3 /* LaunchScreen.storyboard in Resources */,
+				1F32F36A1E93FF8100A5B69F /* MultipleLight.fsh in Resources */,
 				1FE4D0C21E87B05B0076770A /* FlexableMixTexture.vsh in Resources */,
 				1FEAC0811E896261000FEF59 /* ColorScene.fsh in Resources */,
 				1FE4D0F91E880B4E0076770A /* MoveCamera.fsh in Resources */,
@@ -661,6 +689,7 @@
 				1FE4D0C11E87B05B0076770A /* FlexableMixTexture.fsh in Resources */,
 				1F1736451E92D82B00E65D23 /* FlashLight.vsh in Resources */,
 				1FE4D0DF1E87E24D0076770A /* 3DCube.fsh in Resources */,
+				1F32F3701E94044000A5B69F /* lamp1.vsh in Resources */,
 				1FEAC0881E896699000FEF59 /* lamp.vsh in Resources */,
 				1F0F1E2F1E867A5700C101F3 /* Triangle.fsh in Resources */,
 				1FEAC0821E896261000FEF59 /* ColorScene.vsh in Resources */,
@@ -726,6 +755,7 @@
 				1FE4D0C71E87B6CB0076770A /* LSSampleTransformationView.m in Sources */,
 				1F1736411E92D7B200E65D23 /* LSFlashLightView.m in Sources */,
 				1F1B9AAB1E86E64500D51365 /* LSGradientTriangleView.m in Sources */,
+				1F32F3671E93FEEB00A5B69F /* LSMultipleLightView.m in Sources */,
 				1F0F1E031E86591600C101F3 /* main.m in Sources */,
 				1FE4D0DC1E87E2100076770A /* LS3DCubeView.m in Sources */,
 				1F1736311E92C27C00E65D23 /* LSDirectionalLightView.m in Sources */,

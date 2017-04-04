@@ -109,6 +109,9 @@
             case 25:
                 _openGLView = ViewClass(@"LSMultiLightView");
                 break;
+            case 26:
+                _openGLView = ViewClass(@"LSMultipleLightView");
+                break;
             default:
                 _openGLView = ViewClass(@"UIView");
         }
