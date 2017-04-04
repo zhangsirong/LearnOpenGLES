@@ -106,12 +106,5 @@
     return YES;
 }
 
-// 支持设备自动旋转
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-
 
 @end

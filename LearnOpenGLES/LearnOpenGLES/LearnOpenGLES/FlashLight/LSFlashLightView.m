@@ -246,10 +246,13 @@
     GLint lightPosLoc        = glGetUniformLocation(_shaderProgram, "light.position");
     GLint lightSpotdirLoc    = glGetUniformLocation(_shaderProgram, "light.direction");
     GLint lightSpotCutOffLoc = glGetUniformLocation(_shaderProgram, "light.cutOff");
+    GLint lightSpotOuterCutOffLoc = glGetUniformLocation(_shaderProgram, "light.outerCutOff");
+
     GLint viewPosLoc         = glGetUniformLocation(_shaderProgram, "viewPos");
     glUniform3f(lightPosLoc,        cameraPos.x, cameraPos.y, cameraPos.z);
     glUniform3f(lightSpotdirLoc,    cameraFront.x, cameraFront.y, cameraFront.z);
-    glUniform1f(lightSpotCutOffLoc, cos(M_PI_4 / 4));//手电筒的角度
+    glUniform1f(lightSpotCutOffLoc, cos(12.5/180 * M_PI));//手电筒的角度
+    glUniform1f(lightSpotOuterCutOffLoc, cos(17.5/180 * M_PI));
     glUniform3f(viewPosLoc,         cameraPos.x, cameraPos.y, cameraPos.z);
 
     
