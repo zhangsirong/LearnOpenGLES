@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Lpzsrong Inc. All rights reserved.
 //
 
-#define ViewClass(className)   [[NSClassFromString(className) alloc] initWithFrame:self.view.bounds];
+#define ViewClass(className)   [[NSClassFromString(className) alloc] initWithFrame:self.view.bounds]
 
 #import "LSTestViewController.h"
 #import "LSBaseDisplayLinkView.h"
@@ -102,6 +102,9 @@
                 break;
             case 23:
                 _openGLView = ViewClass(@"LSPointLightView");
+                break;
+            case 24:
+                _openGLView = ViewClass(@"LSFlashLightView");
                 break;
             default:
                 _openGLView = ViewClass(@"UIView");
