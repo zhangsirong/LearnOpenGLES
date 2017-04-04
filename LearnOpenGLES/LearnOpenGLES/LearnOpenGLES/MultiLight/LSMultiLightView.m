@@ -15,7 +15,7 @@
 
 //点光源位置
 const GLKVector3 pointLightPositions[] = {
-    { 0.7f,  0.2f,  2.0f },
+    { 0.0f,  0.0f, -3.0f },
     { 2.3f, -3.3f, -4.0f },
     {-4.0f,  2.0f, -8.0 },
     {-0.8f,  0.0f,  0.0f},
@@ -294,20 +294,30 @@ const GLKVector3 pointLightPositions[] = {
     glUniform1f(glGetUniformLocation(_shaderProgram, "pointLights[3].linear"), 0.09);
     glUniform1f(glGetUniformLocation(_shaderProgram, "pointLights[3].quadratic"), 0.032);
 
-    
+    // 聚光灯-手电筒
+    glUniform3f(glGetUniformLocation(_shaderProgram, "spotLight.position"), cameraPos.x, cameraPos.y, cameraPos.z);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "spotLight.direction"), cameraFront.x, cameraFront.y, cameraFront.z);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "spotLight.ambient"), 0.0f, 0.0f, 0.0f);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "spotLight.diffuse"), 1.0f, 1.0f, 1.0f);
+    glUniform3f(glGetUniformLocation(_shaderProgram, "spotLight.specular"), 1.0f, 1.0f, 1.0f);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "spotLight.constant"), 1.0f);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "spotLight.linear"), 0.09);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "spotLight.quadratic"), 0.032);
+    glUniform1f(glGetUniformLocation(_shaderProgram, "spotLight.cutOff"), cos(12.5f/180 * M_PI));
+    glUniform1f(glGetUniformLocation(_shaderProgram, "spotLight.outerCutOff"), cos(15.0f/180 *M_PI));
     
     //利用GLKMath做矩阵矩阵变化
     GLKMatrix4 model = GLKMatrix4Identity;//模型矩阵
     //    GLKMatrix4 view = GLKMatrix4Identity;//观察矩阵
     GLKMatrix4 projection = GLKMatrix4Identity;//投影矩阵
     
-    GLfloat radius = 10.0f;
-    GLfloat camX = sin(displayLink.timestamp) * radius;
-    GLfloat camZ = cos(displayLink.timestamp) * radius;
+    //旋转
+//    GLfloat radius = 10.0f;
+//    GLfloat camX = sin(displayLink.timestamp) * radius;
+//    GLfloat camZ = cos(displayLink.timestamp) * radius;
+//    GLKMatrix4 view = GLKMatrix4MakeLookAt(camX, 0.0f, camZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     
-    //https://learnopengl-cn.github.io/01%20Getting%20started/09%20Camera/
-    GLKMatrix4 view = GLKMatrix4MakeLookAt(camX, 0.0f, camZ, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-//    GLKMatrix4 view = GLKMatrix4MakeLookAt(cameraPos.x, cameraPos.y, cameraPos.z, cameraPos.x + cameraFront.x, cameraPos.y + cameraFront.y, cameraPos.z + cameraFront.z, cameraUp.x, cameraUp.y, cameraUp.z);
+    GLKMatrix4 view = GLKMatrix4MakeLookAt(cameraPos.x, cameraPos.y, cameraPos.z, cameraPos.x + cameraFront.x, cameraPos.y + cameraFront.y, cameraPos.z + cameraFront.z, cameraUp.x, cameraUp.y, cameraUp.z);
     projection = GLKMatrix4MakePerspective(M_PI_4,self.bounds.size.width / self.bounds.size.width, 0.1, 100.0);
     
     GLint modelLocation = glGetUniformLocation(_shaderProgram, [@"model" UTF8String]);
